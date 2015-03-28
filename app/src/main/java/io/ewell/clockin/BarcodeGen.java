@@ -3,9 +3,13 @@ package io.ewell.clockin;
 import java.util.*;
 
 /**
+ *
+ * ${PACKAGE_NAME}
+ *
  * Created by steve on 3/28/15.
+ *
+ * Copyright (c) 2015 steve. All rights reserved.
  */
-
 
 public class BarcodeGen {
 
@@ -15,7 +19,7 @@ public class BarcodeGen {
 
         int evenSum = 0;
         int oddSum = 0;
-        int checksumDigit = 0;
+        int checksumDigit;
 
         for (int i = 0; i < (12 - input.length()); i++) {
             output += zero;
@@ -46,7 +50,7 @@ public class BarcodeGen {
 
     private String convertEmpNumToBinaryEncoding (String input) {
 
-        String output ="";
+        String output;
         String lefthandParity = "0000";
         String[] lefthandParities = new String[] {
                 "OOOOOO",
