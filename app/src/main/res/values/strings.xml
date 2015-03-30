@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">Clock In</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 </resources>

@@ -4,14 +4,31 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import io.ewell.barcodegen.*;
 
 
 public class HomeActivity extends ActionBarActivity {
+
+    private TextView mEmployeeNumber;
+    private TextView mUPC;
+    private TextView mBinary;
+    private View mBarcode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        mEmployeeNumber = (TextView)findViewById(R.id.employee_number);
+        mUPC = (TextView)findViewById(R.id.upc_number);
+        mBinary = (TextView)findViewById(R.id.binary_number);
+        mBarcode = (View)findViewById(R.id.barcode_view);
+        BarcodeGenerator barcodeGen = new BarcodeGenerator("478112");
+        mEmployeeNumber.setText(barcodeGen.getEmployeeNumber());
+        mUPC.setText(barcodeGen.getUpc());
+        mBinary.setText(barcodeGen.getBinary());
     }
 
 
