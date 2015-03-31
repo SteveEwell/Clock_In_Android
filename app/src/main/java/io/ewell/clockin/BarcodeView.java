@@ -43,7 +43,7 @@ public class BarcodeView extends View {
 
         canvas.drawColor(Color.WHITE);
         canvas.drawLine(10,10,10,(mCanvasHeight - 10),mLinePaint);
-
+        canvas.drawLine(15,10,15,(mCanvasHeight - 10),mLinePaint);
     }
 
 
