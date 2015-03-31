@@ -8,25 +8,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/employee_number" />
+        android:id="@+id/employee_number"
+        android:layout_centerHorizontal="true" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/upc_number"
-        android:layout_below="@+id/employee_number" />
+        android:layout_below="@+id/employee_number"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/binary_number"
-        android:layout_below="@+id/upc_number" />
+        android:layout_below="@+id/upc_number"
+        android:layout_centerHorizontal="true" />
 
     <view
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         class="io.ewell.clockin.BarcodeView"
         android:id="@+id/barcode_view"
-        android:layout_below="@+id/binary_number" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
 </RelativeLayout>

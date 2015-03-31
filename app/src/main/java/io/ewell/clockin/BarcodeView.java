@@ -16,41 +16,35 @@ import android.view.View;
  */
 public class BarcodeView extends View {
 
-    public BarcodeView(Context context) {
-        super(context);
-        init(null, 0);
-    }
+    private Paint mLinePaint = new Paint();
+    private int mCanvasWidth;
+    private int mCanvasHeight;
+
+
 
     public BarcodeView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(attrs, 0);
+
+        this.init();
     }
 
-    public BarcodeView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        init(attrs, defStyle);
+    private void init() {
+
+        mLinePaint.setAntiAlias(true);
+        mLinePaint.setStrokeWidth(1f);
+        mLinePaint.setColor(Color.BLACK);
+        mLinePaint.setStyle(Paint.Style.STROKE);
     }
 
-    private void init(AttributeSet attrs, int defStyle) {
-        // Load attributes
-        final TypedArray a = getContext().obtainStyledAttributes(
-                attrs, R.styleable.BarcodeView, defStyle, 0);
-
-
-
-        a.recycle();
-
-
-    }
-
-
-
-    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        this.mCanvasWidth = canvas.getWidth();
+        this.mCanvasHeight = canvas.getHeight();
+
+        canvas.drawColor(Color.WHITE);
+        canvas.drawLine(10,10,10,(mCanvasHeight - 10),mLinePaint);
 
     }
-
 
 
 }
